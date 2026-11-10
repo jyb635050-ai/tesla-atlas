@@ -43,3 +43,8 @@
 - 调试截图：`node tools/shot.mjs <id>`；看原始模型：`tools/bl_preview.py`、`tools/bl_list.py`（路径要给绝对路径）
 - 坑：gltf-transform 的 simplify 对这些模型几乎不减面，要在 Blender 里用 Decimate；原模型顶点不共用，先 remove_doubles；有的模型材质没颜色，配置里 tint 补
 - 本地全量：43/44（只剩 src.dims 的 cybercab 车长，见 BLOCKED 2）
+
+## 判卷修订（2026-11-10，领导批准）
+- 改动：facts 的任何一项可以写成数组 [{source,quote},…]，分项给出处（原来要求同一网页）。其余规则没动
+- 新指纹 SHA256 `0e28c7ab51220e8349a44bef78bd4aeec231d401a61f696c96a9157633d47828`（旧 7d8bf9a0… 作废）
+- 注意：本机内存紧张时（可用 <1 GB）无头浏览器会出着色器报错甚至卡死到 40 分钟超时；出现时分组跑（--only sources / --only car）

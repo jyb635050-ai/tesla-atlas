@@ -117,7 +117,7 @@ const CARS = [
       unveilYear: f(W('Tesla_Cybercab'), 'Tesla unveiled the Cybercab in October 2024'),
       price: f('https://www.teslarati.com/tesla-robotaxi-price-features-range-release-date', 'will cost less than $30,000'),
       status: f(W('Tesla_Cybercab'), 'Production April 2026 – present'),
-      dims: f('https://www.tesla.com/robotaxi/riderguides/cybercab/en_us/GUID-3229BCDF-16D8-447B-BCED-77E3E067AFBB.html', ['Overall Width 69 1754', 'Overall Height 55.4 1408']),
+      dims: [f('https://www.tesla.com/robotaxi/riderguides/cybercab/en_us/GUID-3229BCDF-16D8-447B-BCED-77E3E067AFBB.html', ['Overall Width 69 1754', 'Overall Height 55.4 1408']), f('https://www.teslarati.com/tesla-cybercab-model-y-size-comparison/', 'Cybercab: ~175 inches (≈4,445 mm)')],
     } },
   { id: 'roadster-next', name: { zh: 'Roadster（新一代）', en: 'Roadster (next gen)' }, kind: 'concept', variant: { zh: '2017 原型车造型，尚未量产', en: '2017 prototype design; not yet in production' },
     designer: FRANZ, unveilYear: 2017, deliveryYear: null,

@@ -1048,13 +1048,19 @@
     "source": "https://en.wikipedia.org/wiki/Tesla_Cybercab",
     "quote": "Production April 2026 – present"
    },
-   "dims": {
-    "source": "https://www.tesla.com/robotaxi/riderguides/cybercab/en_us/GUID-3229BCDF-16D8-447B-BCED-77E3E067AFBB.html",
-    "quote": [
-     "Overall Width 69 1754",
-     "Overall Height 55.4 1408"
-    ]
-   }
+   "dims": [
+    {
+     "source": "https://www.tesla.com/robotaxi/riderguides/cybercab/en_us/GUID-3229BCDF-16D8-447B-BCED-77E3E067AFBB.html",
+     "quote": [
+      "Overall Width 69 1754",
+      "Overall Height 55.4 1408"
+     ]
+    },
+    {
+     "source": "https://www.teslarati.com/tesla-cybercab-model-y-size-comparison/",
+     "quote": "Cybercab: ~175 inches (≈4,445 mm)"
+    }
+   ]
   },
   "poster": "assets/posters/cybercab.webp",
   "statusAsOf": "2026-11",

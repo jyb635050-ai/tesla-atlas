@@ -47,7 +47,8 @@ const num = n => n.toLocaleString('en-US');
 const usd = c => c.price.usd == null ? t().none : '$' + num(c.price.usd);
 const salesHtml = c => c.sales.kind === 'none' ? `<span class="mut">${t().none}</span>` :
   `${num(c.sales.units)}${c.sales.kind === 'estimate' ? ` <span class="badge" data-testid="est">${t().est}</span>` : ''} <span class="mut small">${t().asOf} ${c.sales.asOf}</span>`;
-const src = (c, k) => c.facts[k] ? `<a class="src" href="${esc(c.facts[k].source)}" target="_blank" rel="noopener" title="${t().source}">↗</a>` : '';
+const srcs = f => !f ? [] : (Array.isArray(f) ? f : [f]).map(x => x.source);
+const src = (c, k) => srcs(c.facts[k]).map(u => `<a class="src" href="${esc(u)}" target="_blank" rel="noopener" title="${t().source}">↗</a>`).join('');
 
 let cars = [], view = null, sort = { key: null, dir: -1 }, carState = null;
 
@@ -179,7 +180,7 @@ function credits() {
   app.innerHTML = `<h1 class="title">${t().credTitle}</h1><p class="mut lead">${t().credSub}</p><div class="creds">${cars.map(c => `
     <article class="cred" data-testid="credit" data-id="${c.id}"><h2>${esc(c.name[l])}</h2>
       <p>${c.model.origin === 'community' ? c.model.sources.map(s => `${t().author}：${esc(s.author)} · ${t().license}：${esc(s.license)} · <a href="${esc(s.url)}" target="_blank" rel="noopener">Sketchfab ↗</a>`).join('<br>') : t().self}</p>
-      <p class="mut small">${t().facts}：${Object.keys(c.facts).map(k => `<a href="${esc(c.facts[k].source)}" target="_blank" rel="noopener">${FK[k]} ↗</a>`).join(' · ')}</p>
+      <p class="mut small">${t().facts}：${Object.keys(c.facts).flatMap(k => srcs(c.facts[k]).map(u => `<a href="${esc(u)}" target="_blank" rel="noopener">${FK[k]} ↗</a>`)).join(' · ')}</p>
     </article>`).join('')}</div>`;
   A.ready = true;
 }

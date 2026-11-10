@@ -25,6 +25,8 @@
 //       sales 要有 units（写成 3.5 million / 350 万 这类也认：数字×1000 或 ×1000000 或 ×10000 等于 units）；
 //       dims 要分别有长、宽、高（毫米、英寸×25.4、米×1000 都认）。值为 null 的那项不用给 facts。
 //       source 不许是 github/个人托管/文库/网盘类网站
+//       （2026-11-10 领导批准的修订）任何一项也可以写成数组 [{source,quote},{source,quote}]：几个数字出自不同网页时分项给出处，
+//       每句都要在它自己的 source 里找得到，所有句子合起来要含全上面要求的数字
 //   colors:[{ id, name:{zh,en}, hex:"#rrggbb" }]  ≥3 种，hex 不重复,
 //   doors:["fl","fr",…]  能开的门的 id；只有 cyberquad 允许空数组,
 //   model:{ file:"models/<id>.glb", origin:"community"|"selfbuilt", simplified:bool, interior:bool,
@@ -236,7 +238,8 @@ function readCars() { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'd
 let CARS = [];
 const two = x => x && typeof x.zh === 'string' && x.zh.trim() && typeof x.en === 'string' && x.en.trim();
 const ym = s => typeof s === 'string' && /^20\d\d-(0[1-9]|1[0-2])$/.test(s);
-const quotesOf = f => !f ? [] : (Array.isArray(f.quote) ? f.quote : [f.quote]).filter(q => typeof q === 'string');
+const partsOf = f => !f ? [] : (Array.isArray(f) ? f : [f]).filter(x => x && typeof x === 'object');
+const quotesOf = f => partsOf(f).flatMap(x => Array.isArray(x.quote) ? x.quote : [x.quote]).filter(q => typeof q === 'string');
 const designers = c => String(c.designer.en).split(',').map(s => s.trim()).filter(Boolean);
 const sbUid = u => { const m = /([0-9a-f]{32})\/?$/i.exec(String(u).split(/[?#]/)[0]); return m ? m[1] : null; };
 
@@ -264,7 +267,7 @@ function schemaProblems(c) {
   const need = { designer: true, unveilYear: true, price: c.price && c.price.usd !== null, status: true, sales: s.kind !== 'none', dims: c.dims !== null };
   for (const k of Object.keys(need)) if (need[k]) {
     const f = (c.facts || {})[k], q = quotesOf(f);
-    if (!f || typeof f.source !== 'string' || !/^https:\/\//.test(f.source) || !q.length || q.some(x => x.length < 8 || x.length > 300)) p.push(`facts.${k}`);
+    if (!f || !partsOf(f).length || partsOf(f).some(x => typeof x.source !== 'string' || !/^https:\/\//.test(x.source) || !quotesOf(x).length) || !q.length || q.some(x => x.length < 8 || x.length > 300)) p.push(`facts.${k}`);
   }
   return p;
 }
@@ -336,13 +339,15 @@ async function gSources(browser, sab) {
       if (!need) continue; n++;
       const f = (c.facts || {})[k], qs = quotesOf(f);
       if (!f || !qs.length) { bad.push(`${c.id} 没给出处`); continue; }
-      if (!hostOk(f.source)) { bad.push(`${c.id} 来源站不允许`); continue; }
+      if (partsOf(f).some(x => !hostOk(x.source))) { bad.push(`${c.id} 来源站不允许`); continue; }
       let ok; try { ok = has[k](c, qs.join(' ¦ ')); } catch (e) { ok = '数据不全'; }
       if (ok !== true) { bad.push(`${c.id} ${ok}`); continue; }
-      const r = await text(f.source);
-      if (r.status !== 200) { bad.push(`${c.id} 原网页 ${r.status || r.err}`); continue; }
-      const T = norm(r.text); const lost = qs.filter(q => !T.includes(norm(q)));
-      if (lost.length) bad.push(`${c.id} 原网页里找不到「${lost[0].slice(0, 24)}…」`);
+      for (const part of partsOf(f)) {
+        const r = await text(part.source);
+        if (r.status !== 200) { bad.push(`${c.id} 原网页 ${r.status || r.err}`); break; }
+        const T = norm(r.text); const lost = quotesOf(part).filter(q => !T.includes(norm(q)));
+        if (lost.length) { bad.push(`${c.id} 原网页里找不到「${lost[0].slice(0, 24)}…」`); break; }
+      }
     }
     rec('src.' + k, n > 0 && bad.length === 0, !n ? '没有可核对的' : bad.length ? `${bad.length}/${n} 不过：` + list(bad) : `${n} 条都在原网页找到原文`);
   }
