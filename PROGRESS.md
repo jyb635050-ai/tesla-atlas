@@ -36,3 +36,10 @@
 - 本地全量：42/44（FAIL：data.quota、src.dims〔仅 cybercab 车长〕）
 - 线上全量：37/38（FAIL：data.quota）；online.same 12 个文件逐字节相同
 - 改了数据或模型后：重跑 build_models → posters → build_cars → 本地验收 → commit → 单独一条 `git push`
+
+## 任务 1 车模（完成，2026-11-10 第二轮）
+- 领导提供了令牌 → 7 台换成 Sketchfab 社区模型（model-3/s/x/y、cybertruck、roadster-2008、roadster-next），4 台自建（semi、cybercab、robovan、cyberquad）
+- 流程：`SKETCHFAB_TOKEN=… node tools/sf_fetch.mjs get <id> <uid>` → `blender -b --python tools/bl_process.py -- <id>`（配置 tools/models.json）→ `node tools/pack.mjs <id>` → models/meta.json 登记 → build_cars → posters
+- 调试截图：`node tools/shot.mjs <id>`；看原始模型：`tools/bl_preview.py`、`tools/bl_list.py`（路径要给绝对路径）
+- 坑：gltf-transform 的 simplify 对这些模型几乎不减面，要在 Blender 里用 Decimate；原模型顶点不共用，先 remove_doubles；有的模型材质没颜色，配置里 tint 补
+- 本地全量：43/44（只剩 src.dims 的 cybercab 车长，见 BLOCKED 2）

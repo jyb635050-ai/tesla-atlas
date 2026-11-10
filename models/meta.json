@@ -1,0 +1,93 @@
+{
+ "model-3": {
+  "origin": "community",
+  "simplified": false,
+  "interior": true,
+  "sources": [
+   {
+    "url": "https://sketchfab.com/3d-models/tesla-m3-model-3a602469d7874d1397efa67182198705",
+    "author": "wintrez",
+    "license": "CC Attribution",
+    "name": "Tesla M3 model"
+   }
+  ]
+ },
+ "model-s": {
+  "origin": "community",
+  "simplified": false,
+  "interior": true,
+  "sources": [
+   {
+    "url": "https://sketchfab.com/3d-models/tesla-model-s-plaid-9de8855fae324e6cbbb83c9b5288c961",
+    "author": "Lals",
+    "license": "CC Attribution",
+    "name": "Tesla Model S Plaid"
+   }
+  ]
+ },
+ "model-x": {
+  "origin": "community",
+  "simplified": false,
+  "interior": false,
+  "sources": [
+   {
+    "url": "https://sketchfab.com/3d-models/tesla-model-x-6a5469a1b776431cb1e1e17a72a2c4f5",
+    "author": "Abdul.Hannan",
+    "license": "CC Attribution",
+    "name": "Tesla Model X"
+   }
+  ]
+ },
+ "model-y": {
+  "origin": "community",
+  "simplified": false,
+  "interior": true,
+  "sources": [
+   {
+    "url": "https://sketchfab.com/3d-models/2021-tesla-model-y-59e2ead369984b1a85c800ff6cf6789d",
+    "author": "tonielpro520",
+    "license": "CC Attribution",
+    "name": "2021 Tesla Model Y"
+   }
+  ]
+ },
+ "cybertruck": {
+  "origin": "community",
+  "simplified": false,
+  "interior": true,
+  "sources": [
+   {
+    "url": "https://sketchfab.com/3d-models/tesla-cybertruck-bd96c5be64cb4266b96edd1e6d8a5972",
+    "author": "zafarsniper",
+    "license": "CC Attribution",
+    "name": "TESLA Cybertruck"
+   }
+  ]
+ },
+ "roadster-2008": {
+  "origin": "community",
+  "simplified": false,
+  "interior": true,
+  "sources": [
+   {
+    "url": "https://sketchfab.com/3d-models/2008-tesla-roadster-317dabbe5e824948a92091f7bd39c2de",
+    "author": "the_86_guy",
+    "license": "CC Attribution",
+    "name": "2008 Tesla Roadster"
+   }
+  ]
+ },
+ "roadster-next": {
+  "origin": "community",
+  "simplified": false,
+  "interior": true,
+  "sources": [
+   {
+    "url": "https://sketchfab.com/3d-models/tesla-roadster-2020-1fbf29e297bd4a17ac39a00a378441d8",
+    "author": "metarex.4d",
+    "license": "CC Attribution",
+    "name": "Tesla Roadster 2020"
+   }
+  ]
+ }
+}

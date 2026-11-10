@@ -123,10 +123,17 @@
   "statusAsOf": "2026-11",
   "model": {
    "file": "models/roadster-2008.glb",
-   "origin": "selfbuilt",
-   "simplified": true,
+   "origin": "community",
+   "simplified": false,
    "interior": true,
-   "sources": []
+   "sources": [
+    {
+     "url": "https://sketchfab.com/3d-models/2008-tesla-roadster-317dabbe5e824948a92091f7bd39c2de",
+     "author": "the_86_guy",
+     "license": "CC Attribution",
+     "name": "2008 Tesla Roadster"
+    }
+   ]
   }
  },
  {
@@ -137,8 +144,8 @@
   },
   "kind": "production",
   "variant": {
-   "zh": "尺寸取维基百科所列",
-   "en": "Dimensions as listed on Wikipedia"
+   "zh": "2021 款 Plaid",
+   "en": "2021 Plaid"
   },
   "designer": {
    "zh": "弗朗茨·冯·霍尔茨豪森",
@@ -160,9 +167,13 @@
    "asOf": null
   },
   "dims": {
-   "l": 4980,
-   "w": 1960,
-   "h": 1440
+   "l": 4978,
+   "w": 2189,
+   "h": 1445
+  },
+  "dimsNote": {
+   "zh": "宽度含后视镜",
+   "en": "Width includes mirrors"
   },
   "doors": [
    "fl",
@@ -244,11 +255,11 @@
     "quote": "Tesla ended production of the car in May 2026."
    },
    "dims": {
-    "source": "https://en.wikipedia.org/wiki/Tesla_Model_S",
+    "source": "https://www.carexpert.com.au/tesla/model-s/2021/exterior-and-dimensions",
     "quote": [
-     "Length 196.1–197.7 in (4,980–5,021 mm)",
-     "Width 77.3 in (1,960 mm)",
-     "Height 56.5 in (1,440 mm)"
+     "Overall Length (mm): 4978",
+     "Overall Width Inc Mirror (mm): 2189",
+     "Overall Height (mm): 1445"
     ]
    }
   },
@@ -256,10 +267,17 @@
   "statusAsOf": "2026-11",
   "model": {
    "file": "models/model-s.glb",
-   "origin": "selfbuilt",
-   "simplified": true,
+   "origin": "community",
+   "simplified": false,
    "interior": true,
-   "sources": []
+   "sources": [
+    {
+     "url": "https://sketchfab.com/3d-models/tesla-model-s-plaid-9de8855fae324e6cbbb83c9b5288c961",
+     "author": "Lals",
+     "license": "CC Attribution",
+     "name": "Tesla Model S Plaid"
+    }
+   ]
   }
  },
  {
@@ -270,8 +288,8 @@
   },
   "kind": "production",
   "variant": {
-   "zh": "尺寸取维基百科所列",
-   "en": "Dimensions as listed on Wikipedia"
+   "zh": "2016–2020 款",
+   "en": "2016–2020"
   },
   "designer": {
    "zh": "弗朗茨·冯·霍尔茨豪森",
@@ -298,8 +316,12 @@
   },
   "dims": {
    "l": 5036,
-   "w": 1999,
+   "w": 2271,
    "h": 1684
+  },
+  "dimsNote": {
+   "zh": "宽度含后视镜",
+   "en": "Width includes mirrors"
   },
   "doors": [
    "fl",
@@ -385,11 +407,11 @@
     "quote": "Global cumulative sales since inception totaled 106,689 units through September 2018."
    },
    "dims": {
-    "source": "https://en.wikipedia.org/wiki/Tesla_Model_X",
+    "source": "https://www.carexpert.com.au/tesla/model-x/2021/exterior-and-dimensions",
     "quote": [
-     "Length 198.3 in (5,036 mm)",
-     "Width 78.7 in (1,999 mm)",
-     "Height 66.3 in (1,684 mm)"
+     "Overall Length (mm): 5036",
+     "Overall Width Inc Mirror (mm): 2271",
+     "Overall Height (mm): 1684"
     ]
    }
   },
@@ -397,10 +419,17 @@
   "statusAsOf": "2026-11",
   "model": {
    "file": "models/model-x.glb",
-   "origin": "selfbuilt",
-   "simplified": true,
-   "interior": true,
-   "sources": []
+   "origin": "community",
+   "simplified": false,
+   "interior": false,
+   "sources": [
+    {
+     "url": "https://sketchfab.com/3d-models/tesla-model-x-6a5469a1b776431cb1e1e17a72a2c4f5",
+     "author": "Abdul.Hannan",
+     "license": "CC Attribution",
+     "name": "Tesla Model X"
+    }
+   ]
   }
  },
  {
@@ -435,8 +464,12 @@
   },
   "dims": {
    "l": 4694,
-   "w": 1849,
+   "w": 2088,
    "h": 1443
+  },
+  "dimsNote": {
+   "zh": "宽度含后视镜",
+   "en": "Width includes mirrors"
   },
   "doors": [
    "fl",
@@ -522,11 +555,11 @@
     "quote": "the Tesla Model 3 has reached 3,502,363 cumulative vehicle sales"
    },
    "dims": {
-    "source": "https://en.wikipedia.org/wiki/Tesla_Model_3",
+    "source": "https://www.carexpert.com.au/tesla/model-3/2021/exterior-and-dimensions",
     "quote": [
-     "184.8 in (4,694 mm) (pre-facelift)",
-     "Width 72.8 in (1,849 mm)",
-     "56.8 in (1,443 mm) (pre-facelift)"
+     "Overall Length (mm): 4694",
+     "Overall Width Inc Mirror (mm): 2088",
+     "Overall Height (mm): 1443"
     ]
    }
   },
@@ -534,10 +567,17 @@
   "statusAsOf": "2026-11",
   "model": {
    "file": "models/model-3.glb",
-   "origin": "selfbuilt",
-   "simplified": true,
+   "origin": "community",
+   "simplified": false,
    "interior": true,
-   "sources": []
+   "sources": [
+    {
+     "url": "https://sketchfab.com/3d-models/tesla-m3-model-3a602469d7874d1397efa67182198705",
+     "author": "wintrez",
+     "license": "CC Attribution",
+     "name": "Tesla M3 model"
+    }
+   ]
   }
  },
  {
@@ -671,10 +711,17 @@
   "statusAsOf": "2026-11",
   "model": {
    "file": "models/model-y.glb",
-   "origin": "selfbuilt",
-   "simplified": true,
+   "origin": "community",
+   "simplified": false,
    "interior": true,
-   "sources": []
+   "sources": [
+    {
+     "url": "https://sketchfab.com/3d-models/2021-tesla-model-y-59e2ead369984b1a85c800ff6cf6789d",
+     "author": "tonielpro520",
+     "license": "CC Attribution",
+     "name": "2021 Tesla Model Y"
+    }
+   ]
   }
  },
  {
@@ -792,10 +839,17 @@
   "statusAsOf": "2026-11",
   "model": {
    "file": "models/cybertruck.glb",
-   "origin": "selfbuilt",
-   "simplified": true,
+   "origin": "community",
+   "simplified": false,
    "interior": true,
-   "sources": []
+   "sources": [
+    {
+     "url": "https://sketchfab.com/3d-models/tesla-cybertruck-bd96c5be64cb4266b96edd1e6d8a5972",
+     "author": "zafarsniper",
+     "license": "CC Attribution",
+     "name": "TESLA Cybertruck"
+    }
+   ]
   }
  },
  {
@@ -1020,8 +1074,8 @@
   },
   "kind": "concept",
   "variant": {
-   "zh": "尚未量产",
-   "en": "Not yet in production"
+   "zh": "2017 原型车造型，尚未量产",
+   "en": "2017 prototype design; not yet in production"
   },
   "designer": {
    "zh": "弗朗茨·冯·霍尔茨豪森",
@@ -1098,10 +1152,17 @@
   "statusAsOf": "2026-11",
   "model": {
    "file": "models/roadster-next.glb",
-   "origin": "selfbuilt",
-   "simplified": true,
+   "origin": "community",
+   "simplified": false,
    "interior": true,
-   "sources": []
+   "sources": [
+    {
+     "url": "https://sketchfab.com/3d-models/tesla-roadster-2020-1fbf29e297bd4a17ac39a00a378441d8",
+     "author": "metarex.4d",
+     "license": "CC Attribution",
+     "name": "Tesla Roadster 2020"
+    }
+   ]
   }
  },
  {
